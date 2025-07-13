@@ -1,6 +1,6 @@
 // BowlingGame.h
 #ifndef BOWLINGGAME_H
-#define BOWLINGGAME_H  // or use #pragma once
+#define BOWLINGGAME_H
 
 #include <vector>
 
