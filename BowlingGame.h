@@ -1,6 +1,5 @@
 // BowlingGame.h
-#ifndef BOWLINGGAME_H
-#define BOWLINGGAME_H
+#pragma once  // BowlingGame.h
 
 #include <vector>
 
@@ -13,4 +12,5 @@ private:
     std::vector<int> rolls;
 };
 
-#endif // BOWLINGGAME_H
+
+
