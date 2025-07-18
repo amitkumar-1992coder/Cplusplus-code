@@ -9,16 +9,25 @@ int BowlingGame::score() const {
     int totalScore = 0;
     int rollIndex = 0;
 
-    for (int frame = 0; frame < 10; ++frame) {
+    for (int frame = 0; frame < 10 && rollIndex < rolls.size(); ++frame) {
         if (rolls[rollIndex] == 10) {  // Strike
-            totalScore += 10 + rolls[rollIndex + 1] + rolls[rollIndex + 2];
+            if (rollIndex + 2 < rolls.size()) {
+                totalScore += 10 + rolls[rollIndex + 1] + rolls[rollIndex + 2];
+            }
             rollIndex += 1;
-        } else if (rolls[rollIndex] + rolls[rollIndex + 1] == 10) {  // Spare
-            totalScore += 10 + rolls[rollIndex + 2];
+        }
+        else if (rollIndex + 1 < rolls.size() && rolls[rollIndex] + rolls[rollIndex + 1] == 10) {  // Spare
+            if (rollIndex + 2 < rolls.size()) {
+                totalScore += 10 + rolls[rollIndex + 2];
+            }
             rollIndex += 2;
-        } else {
+        }
+        else if (rollIndex + 1 < rolls.size()) {  // Open frame
             totalScore += rolls[rollIndex] + rolls[rollIndex + 1];
             rollIndex += 2;
+        }
+        else {
+            break; // Not enough data to compute
         }
     }
 
