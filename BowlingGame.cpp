@@ -32,7 +32,6 @@ int BowlingGame::score() const {
 int main() {
     BowlingGame game;
 
-    // Sample input as per the image: 5 4 1 5 6 4 10 4 5 10 10 10 2 6
     std::vector<int> sampleRolls = {5, 4, 1, 5, 6, 4, 10, 4, 5, 10, 10, 10, 2, 6};
 
     for (int pins : sampleRolls) {
